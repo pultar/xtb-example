@@ -11,7 +11,7 @@ int main (int argc, char** argv)
   int    const attyp[natoms] = {1, 6, 1, 1, 6, 1, 6, 1, 1, 1, 6, 1, 6, 1, 1, 6, 1, 1, 6, 1, 6, 1, 1, 1, 6, 1, 1, 6, 1, 8, 1};
   double const charge = 0.0;
   int    const uhf = 0;
-  double const coord[3*natoms] = {
+  double const coord[3*31] = {
    -0.23439724, 5.82196780, 12.45597529,
    -1.18337988, 6.25432521, 12.13871529,
    -0.97459304, 7.29844555, 11.90556842,
@@ -52,14 +52,14 @@ int main (int argc, char** argv)
   int    npc = 32;
 
   // external point charges
-  double pc[npc] = {0.431000,-0.664000, 0.173000, 0.020000, 0.020000, 0.020000, 
+  double pc[32] = {0.431000,-0.664000, 0.173000, 0.020000, 0.020000, 0.020000, 
     0.431000,-0.664000, 0.173000, 0.020000, 0.020000, 0.020000, 0.431000,-0.664000, 
     0.173000, 0.020000, 0.020000, 0.020000, 0.431000,-0.664000, 0.173000, 0.020000, 
     0.020000, 0.020000, 0.431000,-0.664000, 0.173000, 0.020000, 0.020000, 0.020000, 
     0.431000,-0.664000};
 
   // coordinates of point charges
-  double pccoord[3*npc] = {
+  double pccoord[3*32] = {
    -0.897837, 14.879088, 29.374541,
    -0.512003, 15.284953, 28.580010,
    -0.503177, 16.714209, 28.534938,
@@ -94,14 +94,14 @@ int main (int argc, char** argv)
     7.989254, 16.686992, 27.853495};
 
   // controls chemical hardness; large values result in point-charge like behavior
-  int numbers[npc] = {
+  int numbers[32] = {
     99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 
     99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 
     99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 
     99, 99};
 
   // results will live in here
-  double pcgrad[3*npc] =
+  double pcgrad[3*32] =
       {0.0, 0.0, 0.0,
        0.0, 0.0, 0.0,
        0.0, 0.0, 0.0,
@@ -216,7 +216,7 @@ int main (int argc, char** argv)
   }
 
   std::cout << "Gradients on point charges:" << std::endl;
-  for (unsigned int i = 0; i < 3*npc; ++i) {
+  for (unsigned int i = 0; i < 3*32; ++i) {
     std::cout << pcgrad[i] << std::endl;
   }
 

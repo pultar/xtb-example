@@ -221,7 +221,7 @@ int main (int argc, char** argv)
   }
 
   xtb_releaseExternalCharges(env, calc);
-
+  
   /*
    * deconstructor will deallocate the objects and overwrite the
    * pointer with NULL

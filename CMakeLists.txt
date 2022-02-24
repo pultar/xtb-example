@@ -4,14 +4,14 @@ cmake_minimum_required(VERSION 3.21)
 project(xtb-example)
 
 # specify the C++ standard
-set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_CXX_STANDARD_REQUIRED True)
+# set(CMAKE_CXX_STANDARD 11)
+# set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 # include directory
-set(PROGRAM_INCLUDES ${PROJECT_SOURCE_DIR}/../gromos-qmmm/xtb1/include)
+set(PROGRAM_INCLUDES ${PROJECT_SOURCE_DIR}/../xtb/include)
 
 # linking
-link_directories(${PROJECT_SOURCE_DIR}/../gromos-qmmm/xtb1/build)
+link_directories(${PROJECT_SOURCE_DIR}/../xtb/build)
 
 # add the executable
 add_executable(xtb-example example.cc)

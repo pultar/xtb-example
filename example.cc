@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 
 #include "xtb.h"
 
@@ -209,18 +210,22 @@ int main (int argc, char** argv)
     return 1;
   }
 
-  xtb_getPCGradient(env, calc, pcgrad);
+  xtb_getPCGradient(env, res, pcgrad);
   if (xtb_checkEnvironment(env)) {
     xtb_showEnvironment(env, NULL);
     return 1;
   }
 
   std::cout << "Gradients on point charges:" << std::endl;
-  for (unsigned int i = 0; i < 3*32; ++i) {
-    std::cout << pcgrad[i] << std::endl;
+  for (unsigned int i = 0; i < 32 * 3; ++i) {
+      std::cout << std::fixed << std::setprecision(8) << pcgrad[i] << "\n";
   }
 
   xtb_releaseExternalCharges(env, calc);
+  if (xtb_checkEnvironment(env)) {
+    xtb_showEnvironment(env, NULL);
+    return 1;
+  }
   
   /*
    * deconstructor will deallocate the objects and overwrite the

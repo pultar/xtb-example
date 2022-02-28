@@ -14,7 +14,7 @@ set(PROGRAM_INCLUDES ${PROJECT_SOURCE_DIR}/../xtb/include)
 link_directories(${PROJECT_SOURCE_DIR}/../xtb/build)
 
 # add the executable
-add_executable(xtb-example example.cc)
+add_executable(xtb-example xphos.cc)
 
 target_include_directories(xtb-example PUBLIC ${PROGRAM_INCLUDES})
 

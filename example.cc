@@ -7,50 +7,37 @@ public:
     Calculator() {
         env = xtb_newEnvironment();
         calc = xtb_newCalculator();
+
+        // initialize results and molecule
+        res = xtb_newResults();
+        mol = xtb_newMolecule(env, &natoms, attyp, coord, &charge, &uhf, NULL,
+                              NULL);
+
+        xtb_setVerbosity(env, XTB_VERBOSITY_MUTED);
+        xtb_loadGFN1xTB(env, mol, calc, NULL);
     }
 
     ~Calculator() {
+        // delete ressources
         xtb_delEnvironment(&env);
         xtb_delCalculator(&calc);
+        xtb_delResults(&res);
+        xtb_delMolecule(&mol);
     }
 
     int calculate() {
-        // initialize results and molecule
-        xtb_TResults res = xtb_newResults();
-        xtb_TMolecule mol = xtb_newMolecule(env, &natoms, attyp, coord, &charge,
-                                            &uhf, NULL, NULL);
-        if (xtb_checkEnvironment(env)) {
-            xtb_showEnvironment(env, NULL);
-            return 1;
-        }
-
-        xtb_setVerbosity(env, 0);
-        if (xtb_checkEnvironment(env)) {
-            xtb_showEnvironment(env, NULL);
-            return 1;
-        }
-
-        xtb_loadGFN1xTB(env, mol, calc, NULL);
-        if (xtb_checkEnvironment(env)) {
-            xtb_showEnvironment(env, NULL);
-            return 1;
-        }
-
         xtb_singlepoint(env, mol, calc, res);
         if (xtb_checkEnvironment(env)) {
             xtb_showEnvironment(env, NULL);
             return 1;
         }
-
         xtb_getEnergy(env, res, &energy);
         if (xtb_checkEnvironment(env)) {
             xtb_showEnvironment(env, NULL);
             return 1;
         }
 
-        // delete ressources
-        xtb_delResults(&res);
-        xtb_delMolecule(&mol);
+        // update coordinates here
 
         return 0;
     }
@@ -58,6 +45,8 @@ public:
 private:
     xtb_TEnvironment env;
     xtb_TCalculator calc;
+    xtb_TResults res;
+    xtb_TMolecule mol;
 
     /*
      * Parameters for the molecule.
@@ -65,10 +54,9 @@ private:
     int const natoms = 31;
     int const attyp[31] = {1, 6, 1, 1, 6, 1, 6, 1, 1, 1, 6, 1, 6, 1, 1, 6,
                            1, 1, 6, 1, 6, 1, 1, 1, 6, 1, 1, 6, 1, 8, 1};
-    ;
     double const charge = 0.0;
     int const uhf = 0;
-    double const coord[3 * 31] = {
+    double coord[3 * 31] = {
         -0.442947496, 11.001947210, 23.53843018,  -2.236268461, 11.818985980,
         22.93889444,  -1.841717705, 13.792091510, 22.49830981,  -2.896722482,
         10.768954200, 21.29444454,  -4.133665133, 11.695821690, 25.11713090,
@@ -88,7 +76,6 @@ private:
         32.94292201,  -1.094745099, 11.448025710, 28.96323675,  0.563579412,
         11.458509150, 27.70991388,  -1.947354387, 8.933606299,  29.46637609,
         -0.489290309, 7.918137207,  29.92393411};
-    ;
 
     double energy = 0;
 };

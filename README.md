@@ -8,3 +8,4 @@
 
 Point charges are always in Bohr (.pc)
 
+Make sure to adapt paths in `CMakeLists.txt` with the location of your binaries.

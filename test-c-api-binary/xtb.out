@@ -7,7 +7,7 @@
      |                    University of Bonn                     |     
       -----------------------------------------------------------      
 
-   * xtb version 6.5.1 (e96fa64) compiled by 'fpultar@gabon' on 2022-11-17
+   * xtb version 6.5.1 (dae5204) compiled by 'fpultar@gabon' on 2022-11-16
 
    xtb is free software: you can redistribute it and/or modify it under
    the terms of the GNU Lesser General Public License as published by
@@ -76,7 +76,7 @@
    J. Seibert, P. Shushkov, S. Spicher, M. Stahn, M. Steiner, T. Strunk,
    J. Stückrath, T. Rose, and J. Unsleber
    
- * started run on 2022/11/17 at 11:20:28.407     
+ * started run on 2022/11/16 at 15:28:36.325     
 
            -------------------------------------------------
           |                Calculation Setup                |
@@ -176,14 +176,14 @@
                   HL-Gap            0.2969687 Eh            8.0809 eV
              Fermi-level           -0.2854917 Eh           -7.7686 eV
 
- SCC (total)                   0 d,  0 h,  0 min,  0.180 sec
- SCC setup                      ...        0 min,  0.018 sec ( 10.229%)
- Dispersion                     ...        0 min,  0.040 sec ( 22.293%)
- classical contributions        ...        0 min,  0.012 sec (  6.779%)
- integral evaluation            ...        0 min,  0.002 sec (  0.892%)
- iterations                     ...        0 min,  0.036 sec ( 19.853%)
- molecular gradient             ...        0 min,  0.058 sec ( 32.050%)
- printout                       ...        0 min,  0.014 sec (  7.896%)
+ SCC (total)                   0 d,  0 h,  0 min,  0.193 sec
+ SCC setup                      ...        0 min,  0.021 sec ( 10.777%)
+ Dispersion                     ...        0 min,  0.031 sec ( 16.241%)
+ classical contributions        ...        0 min,  0.020 sec ( 10.554%)
+ integral evaluation            ...        0 min,  0.002 sec (  0.835%)
+ iterations                     ...        0 min,  0.040 sec ( 20.735%)
+ molecular gradient             ...        0 min,  0.058 sec ( 30.228%)
+ printout                       ...        0 min,  0.021 sec ( 10.622%)
 
          :::::::::::::::::::::::::::::::::::::::::::::::::::::
          ::                     SUMMARY                     ::
@@ -338,14 +338,14 @@ Writing topology from bond orders to xtbtopo.mol
            -------------------------------------------------
 
 ------------------------------------------------------------------------
- * finished run on 2022/11/17 at 11:20:28.698     
+ * finished run on 2022/11/16 at 15:28:36.641     
 ------------------------------------------------------------------------
  total:
- * wall-time:     0 d,  0 h,  0 min,  0.292 sec
- *  cpu-time:     0 d,  0 h,  0 min,  4.577 sec
- * ratio c/w:    15.699 speedup
+ * wall-time:     0 d,  0 h,  0 min,  0.316 sec
+ *  cpu-time:     0 d,  0 h,  0 min,  4.947 sec
+ * ratio c/w:    15.665 speedup
  SCF:
- * wall-time:     0 d,  0 h,  0 min,  0.181 sec
- *  cpu-time:     0 d,  0 h,  0 min,  2.840 sec
- * ratio c/w:    15.704 speedup
+ * wall-time:     0 d,  0 h,  0 min,  0.194 sec
+ *  cpu-time:     0 d,  0 h,  0 min,  3.033 sec
+ * ratio c/w:    15.598 speedup
 

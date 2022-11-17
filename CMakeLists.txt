@@ -8,10 +8,10 @@ set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 # include directory
-set(PROGRAM_INCLUDES /home/fpultar/xtb/include)
+set(PROGRAM_INCLUDES /home/fpultar/dev/repos/xtb/include)
 
 # linking
-link_directories(/home/fpultar/xtb/build)
+link_directories(/home/fpultar/dev/repos/xtb/build)
 
 # add the executable
 add_executable(xtb-example example.cc)
